@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Definitiv keine Scam-Seite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6e6e6;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 320px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Seriöse Bank™</h2>
+    <p>Bitte gib deine Daten ein:</p>
+
+    <input type="text" placeholder="Dein Name"><br>
+    <input type="text" placeholder="IBAN"><br>
+    <input type="text" placeholder="PIN"><br>
+
+    <button onclick="scam()">Absenden</button>
+</div>
+
+<script>
+function scam() {
+    document.body.innerHTML = `
+        <h1>Auftrag abgeschlossen.</h1>
+        <p>Ihr Guthaben wurde erfolgreich auf ein anderes Konto übertragen</p>
+    `;
+}
+</script>
+
+</body>
+</html>
