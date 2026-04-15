@@ -2,46 +2,70 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Definitiv keine Scam-Seite</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #e6e6e6;
-            text-align: center;
-            padding-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
+
         .box {
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            width: 320px;
-            margin: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-        input {
+            border-radius: 12px;
             width: 90%;
-            padding: 10px;
-            margin: 8px;
+            max-width: 350px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px; /* verhindert Zoom auf iPhone */
+            box-sizing: border-box;
+        }
+
         button {
-            padding: 10px 20px;
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
             background: #ff4d4d;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 16px;
             cursor: pointer;
+        }
+
+        button:active {
+            background: #e60000;
         }
     </style>
 </head>
+
 <body>
 
 <div class="box">
     <h2>Seriöse Bank™</h2>
     <p>Bitte gib deine Daten ein:</p>
 
-    <input type="text" placeholder="Dein Name"><br>
-    <input type="text" placeholder="IBAN"><br>
-    <input type="text" placeholder="PIN"><br>
+    <input type="text" placeholder="Dein Name">
+    <input type="text" placeholder="IBAN">
+    <input type="text" placeholder="PIN">
 
     <button onclick="scam()">Absenden</button>
 </div>
@@ -49,8 +73,10 @@
 <script>
 function scam() {
     document.body.innerHTML = `
-        <h1>Auftrag abgeschlossen.</h1>
-        <p>Ihr Guthaben wurde erfolgreich auf ein anderes Konto übertragen</p>
+        <div style="text-align:center; padding:20px;">
+            <h1>Auftrag abgeschlossen.</h1>
+            <p>Ihr Guthaben wurde erfolgreich auf ein anderes Konto übertragen</p>
+        </div>
     `;
 }
 </script>
